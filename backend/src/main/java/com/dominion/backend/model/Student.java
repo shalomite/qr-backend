@@ -25,6 +25,9 @@ private String lastName;
 @Column(nullable = false)
 @NotBlank
 private String birthDate;
+@Column
+@NotBlank
+private String password;
 @Column(nullable = false)
 @NotBlank
 private String matricNo;
