@@ -1,5 +1,6 @@
 package com.dominion.backend.model;
 
+import com.dominion.backend.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotBlank;
 public class Student {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long id;
+private Long serialNo;
 @Column(nullable = false)
 @NotBlank
 private String firstName;
@@ -25,6 +26,9 @@ private String lastName;
 @Column(nullable = false)
 @NotBlank
 private String birthDate;
+@Column
+@NotBlank
+private String password;
 @Column(nullable = false)
 @NotBlank
 private String matricNo;
@@ -33,22 +37,26 @@ private String matricNo;
 private String course;
 @Column(nullable = false)
 @NotBlank
-private Integer graduationYear;
+private String graduationYear;
 @Column
 private Byte picture;
+@Column
+private Role role;
 
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+                "serialNo=" + serialNo +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate='" + birthDate + '\'' +
+                ", password='" + password + '\'' +
                 ", matricNo='" + matricNo + '\'' +
                 ", course='" + course + '\'' +
-                ", graduationYear=" + graduationYear +
+                ", graduationYear='" + graduationYear + '\'' +
                 ", picture=" + picture +
+                ", role=" + role +
                 '}';
     }
 }
