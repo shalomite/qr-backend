@@ -1,15 +1,16 @@
 package com.dominion.backend.service;
 
+import com.dominion.backend.dtos.LoginDto;
+import com.dominion.backend.dtos.StudentDto;
 import com.dominion.backend.model.Student;
-
-import java.util.Optional;
+import org.springframework.http.ResponseEntity;
 
 public interface StudentService {
-    public String createAccount(Student student);
+    public ResponseEntity<Student> createAccount(StudentDto studentDto);
 
-    public Student login(String matricNo, String password);
+    public Student login(LoginDto loginDto);
 
-    public void updateStudentDetails(Student student, Long id);
+    public void updateStudentDetails(StudentDto studentDto, String matricNo);
 
 }
 
